@@ -33,23 +33,16 @@ if (isset($_SESSION["user"])) {
       border-bottom-right-radius: 10px;
     }
 
-    /* Style the header */
     .header {
       color: #f8464a;
-      /* Text color */
       text-align: center;
-      /* Center the text */
       padding: 30px;
-      /* Add padding for spacing */
     }
 
-    /* Style the h1 within the header */
     .header h1 {
       font-family: Manrope, sans-serif;
       font-size: 24px;
-      /* Font size */
       margin: 0;
-      /* Remove default margin */
     }
 
     .p {
@@ -78,9 +71,6 @@ if (isset($_SESSION["user"])) {
       font-size: 15px;
     }
 
-
-
-
     .form-group {
       margin-bottom: 30px;
     }
@@ -96,7 +86,6 @@ if (isset($_SESSION["user"])) {
       border-radius: 5px;
     }
 
-    /* Style the submit button */
     .form-btn {
       text-align: center;
     }
@@ -111,12 +100,10 @@ if (isset($_SESSION["user"])) {
       cursor: pointer;
     }
 
-    /* Add hover effect to the submit button */
     .btn-primary:hover {
       background-color: rgb(124, 124, 124);
     }
 
-    /* Adjust styling for small screens (optional) */
     @media (max-width: 768px) {
       .form-control {
         width: 100%;
