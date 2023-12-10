@@ -1,8 +1,6 @@
 <?php
-// Include the database configuration file 
 require_once 'config/config.php';
 
-// Fetch the marker info from the database 
 $sql = "SELECT * FROM locations";
 $result = $conn->query($sql);
 $markers = [];
@@ -19,7 +17,6 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Close the database connection
 $conn->close();
 ?>
 
@@ -52,13 +49,9 @@ $conn->close();
             font-size: 25px;
             color: #f84646;
             margin-top: 10px;
-            /* Add space above the h3 element */
             margin-bottom: 10px;
-            /* Add space below the h3 element */
             margin-left: 0;
-            /* Add space to the left of the h3 element */
             margin-right: 0;
-            /* Add space to the right of the h3 element */
             padding: 5px;
             
         }
@@ -67,24 +60,17 @@ $conn->close();
             font-size: 20px;
             font-weight: 500;
             margin-top: 10px;
-            /* Add space above the h3 element */
             margin-bottom: 10px;
-            /* Add space below the h3 element */
             margin-left: 0;
-            /* Add space to the left of the h3 element */
             margin-right: 0;
-            /* Add space to the right of the h3 element */
             padding: 5px;
         }
 
-        /* Adjust mapCanvas size for responsiveness */
         #mapCanvas {
             width: 100%;
             height: 869px;
-            /* You can adjust the height as needed */
         }
 
-        /* Style for the "Book Now" button */
         .button {
             background-color: #f84646;
             color: #fff;
@@ -151,7 +137,6 @@ $conn->close();
                         title: markerData.name
                     });
 
-                    // Use event delegation to handle marker click events
                     google.maps.event.addListener(marker, 'click', function(markerData) {
                         return function() {
                             var content = '<div><h3>' + markerData.name + '</h3>' +
@@ -169,19 +154,16 @@ $conn->close();
             }
 
             function showBookingForm(name, price) {
-                // Create a form element dynamically
                 var form = document.createElement('form');
                 form.method = 'POST';
                 form.action = 'confirmbook.php';
 
-                // Create hidden input fields for passing data
                 var nameInput = document.createElement('input');
                 nameInput.type = 'hidden';
                 nameInput.name = 'name';
                 nameInput.value = name;
                 form.appendChild(nameInput);
 
-                // Submit the form
                 document.body.appendChild(form);
                 form.submit();
 
