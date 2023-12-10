@@ -3,17 +3,14 @@ session_start();
 require_once 'config/config.php';
 
 if (!isset($_SESSION['user'])) {
-    // If the user is not logged in, redirect them to the login page.
     header("Location: login.php");
     exit();
 }
 
-// Check if the booking ID and user email are provided in the URL
 if (isset($_GET['booking_id']) && isset($_GET['user_email'])) {
     $bookingId = $_GET['booking_id'];
     $userEmail = $_GET['user_email'];
 
-    // Query the database to retrieve the booking details
     $getBookingSQL = "SELECT * FROM bookings WHERE id = ? AND email = ?";
     $stmt = $conn->prepare($getBookingSQL);
 
@@ -25,7 +22,6 @@ if (isset($_GET['booking_id']) && isset($_GET['user_email'])) {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-            // Output the HTML receipt content
             ?>
             <!DOCTYPE html>
             <html lang="en">
@@ -35,7 +31,6 @@ if (isset($_GET['booking_id']) && isset($_GET['user_email'])) {
                 <title>Receipt</title>
                 <link rel="stylesheet" href="assets/css/style.css">
                 <style>
-                    /* Add your custom CSS styles here */
                     body {
                         font-family: Manrope, sans-serif;
                         background-color: #FFF0F5;
@@ -83,14 +78,12 @@ if (isset($_GET['booking_id']) && isset($_GET['user_email'])) {
                         border-radius: 10px;
                     }
 
-
                     .foot h1 {
                         font-family: Segoe Script, sans-serif;
                         color: white;
                         padding: 10px 0;
                     }
 
-                    /* Add responsive styles */
                     @media screen and (max-width: 600px) {
                         .container {
                             width: 100%;
