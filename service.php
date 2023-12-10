@@ -71,7 +71,6 @@ $user = $_SESSION['user'];
             display: flex;
         }
 
-        /* Style each column */
         #column21,
         #column22 {
             flex: 1;
@@ -84,14 +83,12 @@ $user = $_SESSION['user'];
             margin: 10px;
         }
 
-        /* Style the image */
         .image {
             max-width: 80%;
             height: auto;
             border-radius: 5px;
         }
 
-        /* Style the button */
         .button {
             display: block;
             background-color: #f84646;
@@ -143,13 +140,11 @@ $user = $_SESSION['user'];
     </div>
     <section class="container" id="section-3">
         <div id="row">
-            <!-- Column 1 -->
             <div id="column21">
                 <img src="assets/images/car-book.png" class="image image-full">
 
                 <a href="map.php" class="button">Book Now</a>
             </div>
-            <!-- Column 2 -->
             <div id="column22">
                 <img src="assets/images/car-search.png" class="image image-full">
 
