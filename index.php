@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="div-12">
-          <div class="div-13">“A Smarter or Easy Way to Park.”</div>
+          <div class="div-13">“A Hassle-Free or Easy Way to Park”</div>
           <div class="div-14">
             Discover the ease of stress-free parking in the digital age.
           </div>
