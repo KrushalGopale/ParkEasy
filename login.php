@@ -32,22 +32,15 @@
       padding-right: 75px;
     }
 
-    /* Style the header */
     .header {
       color: #f8464a;
-      /* Text color */
       text-align: center;
-      /* Center the text */
       padding: 10px;
-      /* Add padding for spacing */
     }
 
-    /* Style the h1 within the header */
     .header h1 {
       font-size: 24px;
-      /* Font size */
       margin: 0;
-      /* Remove default margin */
     }
 
     .p {
@@ -71,7 +64,6 @@
       border-radius: 50px 20px;
     }
 
-    /* Style the form elements */
     .form-group {
       margin-bottom: 15px;
     }
@@ -83,7 +75,6 @@
       border-radius: 5px;
     }
 
-    /* Style the submit button */
     .form-btn {
       text-align: center;
     }
@@ -97,12 +88,10 @@
       cursor: pointer;
     }
 
-    /* Add hover effect to the submit button */
     .btn-primary:hover {
       background-color: rgb(124, 124, 124);
     }
 
-    /* Adjust styling for small screens (optional) */
     @media (max-width: 768px) {
       .form-control {
         width: 100%;
