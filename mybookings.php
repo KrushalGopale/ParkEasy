@@ -101,7 +101,6 @@
         }
 
 
-        /* Responsive Styles */
         @media screen and (max-width: 600px) {
             .container {
                 margin: 10px;
@@ -141,27 +140,21 @@
         require_once 'config/config.php';
 
         if (!isset($_SESSION['user'])) {
-            // If the user is not logged in, redirect them to the login page.
             header("Location: login.php");
             exit();
         }
 
-        // Retrieve the user's email from the session (assuming it's stored as 'email')
         $userEmail = $_SESSION['user']['email'];
 
-        // Check if a cancel request is submitted
         if (isset($_POST['cancel_booking'])) {
-            // Get the booking ID from the submitted form
             $bookingId = $_POST['booking_id'];
 
-            // Query to delete the booking
             $deleteBookingSQL = "DELETE FROM bookings WHERE id = ? AND email = ?";
             $stmt = $conn->prepare($deleteBookingSQL);
 
             if ($stmt) {
                 $stmt->bind_param("is", $bookingId, $userEmail);
                 if ($stmt->execute()) {
-                    // Booking was successfully canceled
                     echo "Booking canceled successfully.";
                 } else {
                     echo "Error canceling booking: " . $conn->error;
@@ -172,7 +165,6 @@
             }
         }
 
-        // Query the database to retrieve user bookings
         $getBookingsSQL = "SELECT * FROM bookings WHERE email = ?";
         $stmt = $conn->prepare($getBookingsSQL);
 
@@ -182,7 +174,6 @@
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
-                // Display user bookings in a table
                 echo '<table>';
                 echo '<tr><th>Location Name</th><th>Date</th><th>Entry Time</th><th>Exit Time</th><th>Vehicle Number</th><th>Vehicle Type</th><th>Payment Method</th><th>Receipt</th><th>Cancel</th></tr>';
                 while ($row = $result->fetch_assoc()) {
@@ -194,11 +185,9 @@
                     echo '<td>' . $row['vehicle_number'] . '</td>';
                     echo '<td>' . $row['vehicle_type'] . '</td>';
                     echo '<td>' . $row['payment_method'] . '</td>';
-                    // Add a "View Receipt" button with a link to view_receipt.php
                     echo '<td class="actions">';
                     echo '<a href="receipt.php?booking_id=' . $row['id'] . '&user_email=' . $userEmail . '"><button class="cancel-button">View</button></a>';
                     echo '</td>';
-                    // Add a form with a cancel button
                     echo '<td class="actions">';
                     echo '<form method="post" action="">';
                     echo '<input type="hidden" name="booking_id" value="' . $row['id'] . '">';
