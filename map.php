@@ -92,7 +92,7 @@ $conn->close();
         }
     </style>
 </head>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnIghaBCXo7FLxLCnwtYdPvK1i8MN1WGE"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 
 <body>
     <div class="div">
